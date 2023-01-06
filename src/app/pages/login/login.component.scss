@@ -1,0 +1,21 @@
+:host {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    // gap: 24px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        // gap: 24px;
+    }
+}
+
+// .mat-mdc-text-field-wrapper, .mdc-text-field, .ng-tns-c80-1, .mdc-text-field--filled {
+//     background-color: red;
+// }
