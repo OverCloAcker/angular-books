@@ -7,6 +7,7 @@ import { LogoutComponent } from './pages/logout/logout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { InfoComponent } from './pages/info/info.component';
 import { SearchComponent } from './pages/search/search.component';
+import { BooksComponent } from './pages/books/books.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,16 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  // {
+  //   path: 'books',
+  //   component: BooksComponent,
+  //   canActivate: [AuthGuard]
+  // },
+  {
+    path: 'books',
+    loadChildren: () => import('./pages/books/books.module').then(m => m.BooksModule),
     canActivate: [AuthGuard]
   },
   {

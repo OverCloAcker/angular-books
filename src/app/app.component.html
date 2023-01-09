@@ -8,6 +8,15 @@
         <p *ngIf="isSideNavMaximized">Home</p>
       </a>
 
+      <a *ngIf="authService.isAuthorized" [ngClass]="{'mat-side-nav-minimized' : isSideNavMaximized == false}"
+        [ngClass]="{'mat-side-nav-maximized' : isSideNavMaximized == true}" mat-list-item routerLink="books"
+        routerLinkActive="nav-link-active" [routerLinkActiveOptions]="{exact: true}">
+        <div class="mat-icon-wrapper">
+          <mat-icon>local_library</mat-icon>
+        </div>
+        <p *ngIf="isSideNavMaximized">Books</p>
+      </a>
+
       <a *ngIf="authService.isAuthorized" [ngClass]="{'mat-side-nav-minimized' : isSideNavMaximized == false}" [ngClass]="{'mat-side-nav-maximized' : isSideNavMaximized == true}" mat-list-item routerLink="search" routerLinkActive="nav-link-active" [routerLinkActiveOptions]="{exact: true}">
         <mat-icon>search</mat-icon>
         <p *ngIf="isSideNavMaximized">

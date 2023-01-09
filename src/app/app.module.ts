@@ -18,6 +18,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { MatInputModule } from "@angular/material/input";
+// import { AddBookDialogComponent } from './pages/books/dialogs/add-book-dialog/add-book-dialog.component';
+// import { AuthorPipe } from './pipes/author.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { MatInputModule } from "@angular/material/input";
     SearchComponent,
     LogoutComponent,
     LanguageComponent,
-    LoginComponent
+    LoginComponent,
+    // AddBookDialogComponent,
+    // AuthorPipe
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,9 @@ import { MatInputModule } from "@angular/material/input";
     MatInputModule,
   ],
   providers: [],
+  // exports: [
+  //   AuthorPipe
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
