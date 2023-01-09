@@ -48,6 +48,10 @@ $angular-sidenav-theme: mat.define-light-theme((
     'opsz' 48
 }
 
+* {
+  outline: 1px red solid;
+}
+
 :root, ::before, ::after {
   @include tokens.tokens;
   @include theme.init;
@@ -65,3 +69,5 @@ body {
 @import 'scss/.mat-sidenav';
 @import 'scss/.mat-form-field';
 @import 'scss/.mat-dialog-content';
+@import 'scss/.mat-book-list-item';
+@import 'scss/.mat-sidenav-content'

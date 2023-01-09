@@ -4,9 +4,18 @@
     <button mat-raised-button (click)="addBook()">Add Book</button>
 </p>
 
-<div *ngFor="let book of bookService.getList() | async">
-     {{ book.author | author }}: {{ book.name }}
-    <button mat-icon-button (click)="editBook(book)">
-        <mat-icon>edit</mat-icon>
-    </button>
+<div *ngFor="let book of bookService.getList() | async" class='mat-book-list-item'>
+    <div class='mat-book-info'>
+        <div class="mat-book-name">
+            {{ book.name }}
+        </div>
+        <div class="mat-book-author">
+            {{ book.author | author }}
+        </div>
+    </div>
+    <div class="mat-icon-button-wrapper">
+        <button mat-icon-button (click)="editBook(book)">
+            <mat-icon>edit</mat-icon>
+        </button>
+    </div>
 </div>
