@@ -20,11 +20,6 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [AuthGuard]
   },
-  // {
-  //   path: 'books',
-  //   component: BooksComponent,
-  //   canActivate: [AuthGuard]
-  // },
   {
     path: 'books',
     loadChildren: () => import('./pages/books/books.module').then(m => m.BooksModule),
@@ -33,7 +28,6 @@ const routes: Routes = [
   {
     path: 'info',
     component: InfoComponent,
-    // canActivate: [AuthGuard]
   },
   {
     path: 'search',
@@ -43,7 +37,6 @@ const routes: Routes = [
   {
     path: 'language',
     component: LanguageComponent,
-    // canActivate: [AuthGuard]
   },
   {
     path: 'login',

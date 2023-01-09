@@ -53,14 +53,4 @@ export class AppComponent implements OnInit {
         break;
     }
   }
-
-  // public login(): void {
-  //   this.authService.isAuthorized = true;
-  //   this.router.navigate(['/home']);
-  // }
-
-  // public logout(): void {
-  //   this.authService.isAuthorized = false;
-  //   this.router.navigate(['/login']);
-  // }
 }

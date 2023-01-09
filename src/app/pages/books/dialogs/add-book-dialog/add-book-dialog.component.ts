@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IBook } from 'src/app/interfaces/book';
@@ -9,6 +9,8 @@ import { IBook } from 'src/app/interfaces/book';
   styleUrls: ['./add-book-dialog.component.scss'],
 })
 export class AddBookDialogComponent implements OnInit {
+  public popupMode: string = 'Add';
+
   public book: IBook = {
     name: 'book 2',
     author: {
@@ -48,6 +50,7 @@ export class AddBookDialogComponent implements OnInit {
 
   public ngOnInit() {
     if (this.data) {
+      this.popupMode = 'Update';
       this.name.setValue(this.data.name);
       this.firstName.setValue(this.data.author.firstName);
       this.lastName.setValue(this.data.author.lastName);

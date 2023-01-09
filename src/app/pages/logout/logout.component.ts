@@ -8,15 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./logout.component.scss']
 })
 export class LogoutComponent {
-
   constructor(
-    // public authService: AuthService,
-    // public router: Router
   ) {}
-
-  // public logout(): void {
-  //   this.authService.isAuthorized = false;
-  //   this.router.navigate(['/login']);
-  // }
-
 }
