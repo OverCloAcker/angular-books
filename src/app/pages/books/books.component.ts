@@ -9,12 +9,8 @@ import { IBook } from 'src/app/interfaces/book';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss'],
 })
-
 export class BooksComponent {
-  constructor(
-    public bookService: BookService,
-    private dialog: MatDialog,
-  ) {}
+  constructor(public bookService: BookService, private dialog: MatDialog) {}
 
   public addBook() {
     const dialogRef = this.dialog.open(AddBookDialogComponent);
@@ -30,7 +26,6 @@ export class BooksComponent {
     const dialogRef = this.dialog.open(AddBookDialogComponent, {
       data: book,
     });
-    
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {

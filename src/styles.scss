@@ -48,9 +48,9 @@ $angular-sidenav-theme: mat.define-light-theme((
     'opsz' 48
 }
 
-* {
-  outline: 1px red solid;
-}
+// * {
+//   outline: 1px red solid;
+// }
 
 :root, ::before, ::after {
   @include tokens.tokens;

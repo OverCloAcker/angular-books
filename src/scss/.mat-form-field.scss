@@ -54,8 +54,15 @@ mat-label, .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
     @include typography.body-small;
 }
 
-.mat-mdc-button {
+// .mat-mdc-button {
+//     // margin-left: auto;
+//     // height: 40px;
+// }
+
+//Button default settings
+.mat-mdc-button.mat-mdc-button-base {
     margin-left: auto;
+    height: 40px;
 }
 
 //Login button disabled
