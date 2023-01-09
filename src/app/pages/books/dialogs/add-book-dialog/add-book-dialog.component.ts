@@ -18,7 +18,7 @@ export class AddBookDialogComponent implements OnInit {
   } as IBook;
 
   public bookForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
+    name: new FormControl('', Validators.required),
     author: new FormGroup({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
@@ -43,11 +43,10 @@ export class AddBookDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<AddBookDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: IBook
+    @Inject(MAT_DIALOG_DATA) public data?: IBook
   ) {}
 
-  public ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+  public ngOnInit() {
     if (this.data) {
       this.name.setValue(this.data.name);
       this.firstName.setValue(this.data.author.firstName);
@@ -61,14 +60,14 @@ export class AddBookDialogComponent implements OnInit {
 
   public onAddClick() {
     if (this.bookForm.invalid) return;
-    let book: IBook = {
+    let book = {
       id: this.data?.id,
       name: this.name.value,
       author: {
         firstName: this.firstName.value,
         lastName: this.lastName.value,
       },
-  } as IBook;
+    } as IBook;
     this.dialogRef.close(book);
   }
 }

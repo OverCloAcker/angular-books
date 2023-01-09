@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 // import { IAuthor } from 'src/app/interfaces/author';
 // import { IBook } from 'src/app/interfaces/book';
 import { BookService } from 'src/app/services/book.service';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { AddBookDialogComponent } from './dialogs/add-book-dialog/add-book-dialog.component';
 import { IBook } from 'src/app/interfaces/book';
 
@@ -20,11 +20,12 @@ export class BooksComponent {
   // }
 
   public addBook() {
-    const dialogRef = this.dialog.open(AddBookDialogComponent, {
-      data: {},
-    });
+    // const dialogRef = this.dialog.open(AddBookDialogComponent, {
+    //   data: {},
+    // });
+    const dialogRef = this.dialog.open(AddBookDialogComponent);
 
-    dialogRef.afterClosed().subscribe((result) => {
+    dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.bookService.addBook(result).subscribe();
       }
@@ -41,7 +42,7 @@ export class BooksComponent {
       data: book,
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
+    dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.bookService.editBook(result).subscribe();
       }

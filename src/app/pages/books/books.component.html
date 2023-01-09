@@ -5,11 +5,8 @@
 </p>
 
 <div *ngFor="let book of bookService.getList() | async">
-    <!-- {{ book.author.firstName }} {{ book.author.lastName }}: {{ book.name }} -->
-     <!-- {{ getAuthorLabel(book.author) }}: {{ book.name }} -->
      {{ book.author | author }}: {{ book.name }}
     <button mat-icon-button (click)="editBook(book)">
         <mat-icon>edit</mat-icon>
-        <!-- Start Recording -->
     </button>
 </div>
