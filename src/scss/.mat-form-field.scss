@@ -54,6 +54,10 @@ mat-label, .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
     @include typography.body-small;
 }
 
+.mat-mdc-button {
+    margin-left: auto;
+}
+
 //Login button disabled
 .mat-mdc-button[disabled][disabled] {
     .mdc-button__ripple {
